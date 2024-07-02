@@ -1,9 +1,8 @@
-import { useContext, memo } from 'react'
-import { DarkModeContext } from '../contexts/DarkModeContext'
+import useDarkMode from '../hooks/useDarkMode'
 import Header from './Header'
 
-const Main = memo(function Main() {
-  const { isDarkMode } = useContext(DarkModeContext)
+export default function Main() {
+  const { isDarkMode } = useDarkMode()
   const style = {
     color: isDarkMode ? 'white' : 'black',
     backgroundColor: isDarkMode ? 'black' : 'white',
@@ -17,6 +16,4 @@ const Main = memo(function Main() {
       <h1>Provider Pattern</h1>
     </main>
   )
-})
-
-export default Main
+}
